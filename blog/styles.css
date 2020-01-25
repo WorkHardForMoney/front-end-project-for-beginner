@@ -1,0 +1,46 @@
+body {
+    background-color: darkslategrey;
+    color: azure;
+    font-size: 1.1em;
+}
+
+h1 {
+    color: coral;
+}
+
+a:link {
+    color: white;
+}
+
+footer {
+    background-color: rebeccapurple;
+    position: fixed;
+    bottom: 5px;
+    right: 1px;
+}
+
+a:visited {
+    color: grey;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+.nav {
+    position: fixed;
+    right: 20px;
+    background-color: aquamarine;
+    color: red;
+    width: 20%;
+    text-align: center;
+}
+
+.content {
+    width: 70%;
+}
+
+p {
+    text-indent: 5px;
+}

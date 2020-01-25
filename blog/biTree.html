@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<div class='nav'>
+    <h3>导航栏</h3>
+    <p><a href="biTree.html">二叉树的DFS/BFS的递归/非递归形式</a></p>
+    <p><a href="array.html">How to store words in an array in C?</a></p>
+    <p><a href="char.html">size of char datatype and char array in C</a></p>
+    <p><a href="Dijkstra.html">C / C++ Program for Dijkstra’s shortest path algorithm </a></p>
+    <p><a href="store.html">C Program to Store Information of Students Using Structure</a></p>
+</div>
+<div class='content'>
+    <h1>二叉树的DFS/BFS的递归/非递归形式</h1>
+
+    <p>二叉树的遍历是二叉树的经典算法，方式有很多，对理解递归迭代和堆栈队列有帮助。</br>
+        以下是我写的二叉树深度优先遍历(DFS)和广度优先遍历(BFS)的递归和非递归形式，并顺便介绍一
+        </br>下完全二叉树计算节点个数的算法。
+    </p>
+    <h2> 1. BFS的递归形式</h2>
+    <p>BFS的非递归形式是我个人非常喜欢的一套写法，用了Queue的数据结构，并且维护当前层的node数量和下一层的node数量。</p>
+    <h2>3. DFS的递归形式</h2>
+    <p>二叉树的DFS分为三种，preorder，inorder和postorder，这里以preorder为例，最经典的三行代码：</p>
+    <h2>4. DFS的非递归形式</h2>
+    <p>这是我之前不是很熟悉的一种形式。但我知道，它肯定是用栈模拟递归。至于怎么做，可以利用栈，现将右子树压栈再将左子树压栈：</p>
+    <p>可以看出上面是preOrder，inOrder和postOrder的话把res.add(node);的位置移动一下就好了。</p>
+    <h2>[BONUS] 计算完全二叉树的node个数</h2>
+    <p>Definition of a complete binary tree from Wikipedia: In a complete binary tree every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes inclusive at
+        the last level h.</p>
+    <p>要计算完全二叉树的结点个数，用上面这些遍历方式，复杂度都是O(n)。但是既然有「完全二叉树」这个条件，那复杂度肯定可以更低。这里可以利用计算满二叉树的结点个数的公式：</p>
+    <p>其实一颗完全二叉树，它的左右子树必然有一棵是满二叉树。那么，就只需要判断一下，然后递归地去计算各个小的满二叉树的node个数了。</p>
+</div>
+<footer>引用自https://www.jianshu.com/p/a753d5c733ec</footer>
