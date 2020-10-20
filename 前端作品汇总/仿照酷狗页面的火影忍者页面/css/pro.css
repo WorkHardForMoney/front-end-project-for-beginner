@@ -1,0 +1,59 @@
+.change-img:hover {
+		display: block;
+		background-color: whitesmoke;
+		font-size: 200px;
+	}
+	#first{
+		margin-left: 100px;
+	}
+#topest a{
+   margin-right: 30px;
+}
+	.change-img {
+		display: none;
+	}
+
+	#lunbotu:hover .change-img {
+		display: block;
+	}
+.content-left{
+		width: 60%;
+}
+.content-right{
+		width: 30%;
+}
+.hangneikuai{
+	display: inline-block;
+}
+.content-whole{
+	margin-left: 16%;
+	margin-right:16%;
+	width: 68%;
+		height:300px;
+}
+.content-height{
+height: 150px;
+}
+
+	#lunbotu {
+		position: static;
+		background-image: url(../img/火影忍者/轮播图/img1.jpg);
+		height: 700px;
+		background-repeat: no-repeat;
+		text-align: center;
+		background-size: cover;
+		width: 100%;
+	}
+
+	#lunbolan {
+		color: azure;
+		font-size: 50px;
+		position: absolute;
+		top:560px;
+		left: 30%;
+	
+	}
+#lunbolan li{
+	float: left;
+
+}

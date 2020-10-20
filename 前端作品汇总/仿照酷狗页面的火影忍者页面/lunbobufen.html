@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+			<script type="text/javascript" src="./js/jquery.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/pro.css">
+			<link rel="stylesheet" href="./css/w3.css">
+		<style></style>
+	</head>	
+	<body>
+		<div id="lunbotu" >
+		   
+	<view class="glyphicon glyphicon-chevron-left change-img"  style="font-size:200px;position: absolute;left: 0px;top:30%;" id="left" onclick="change_left()"></view>
+		<view class="glyphicon glyphicon-chevron-right change-img"  style="font-size:200px;position: absolute;right: 0px;top:30%;" id="right" onclick="change_right()"></view>
+		<ul id="lunbolan"></ul>
+		</div>
+
+		
+<script>
+		var no=1;
+		var lunbotu=document.getElementById("lunbotu");
+		var lunbolan=document.getElementById("lunbolan");
+		var lunbodian_arr=new Array();
+		window.onload=add_lunbodian();
+		var time=2000;
+		function add_lunbodian(){
+				for(let num=1;num<=8;num++){
+			let lunbodian=document.createElement("li");
+				lunbodian.style.margin="40px";
+				
+			lunbodian.addEventListener('mouseover',function(){
+				bianhuixiao(no);
+				lunbodian.style.fontSize="70px";
+			lunbodian.style.position="relative";
+			lunbodian.style.bottom="10px";
+				lunbodian.style.left="10px";
+				let str2="url(./img/火影忍者/轮播图/img"+num+".jpg)";
+				lunbotu.style.backgroundImage=str2;
+				no=num;
+				clearTimeout(lunbotu.timer);
+		lunbotu.timer=setTimeout("trans("+no+")",time);
+			}) 	
+			
+			lunbodian.addEventListener('mouseleave',function(){
+				lunbodian.style.fontSize="50px";
+				lunbodian.style.position="relative";
+				lunbodian.style.bottom="0px";
+					lunbodian.style.left="0px";
+			}) 	
+		lunbolan.appendChild(lunbodian);
+		lunbodian_arr[num-1]=lunbodian;
+		}
+		}
+
+		function bianda(lunbodian){
+			lunbodian.style.fontSize="70px";
+				lunbodian.style.position="relative";
+				lunbodian.style.bottom="10px";
+					lunbodian.style.left="10px";
+					let str2="url(./img/火影忍者/轮播图/img"+num+".jpg)";
+					lunbotu.style.backgroundImage=str2;
+					no=num;
+					clearTimeout(lunbotu.timer);
+			lunbotu.timer=setTimeout("trans("+no+")",time);
+		}
+	function change_left(){
+		bianhuixiao(no);
+		if(no===1)no=8;
+		else   no--;
+		bianda
+		       let str="url(./img/火影忍者/轮播图/img"+no+".jpg)";
+		   lunbotu.style.backgroundImage=str;
+	}
+	function change_right(){
+			bianhuixiao(no);
+		if(no===8)no=1;
+		else   no++;
+		bianda();
+		       let str="url(./img/火影忍者/轮播图/img"+no+".jpg)";
+		   lunbotu.style.backgroundImage=str;
+	}
+	window.onload=auto_change();
+	function auto_change(){
+	
+		let str="url(./img/火影忍者/轮播图/img"+no+".jpg)";
+		lunbotu.style.backgroundImage=str;
+		lunbodian_arr[no-1].style.fontSize="70px";
+	lunbodian_arr[no-1].style.position="relative";
+		lunbodian_arr[no-1].style.bottom="10px";
+		lunbodian_arr[no-1].style.left="10px";
+			
+		lunbotu.timer=setTimeout("trans("+no+")",time);
+		
+	}
+		
+	function trans(val){
+bianhuixiao(no);
+			if(no===8)no=1;
+			else no++;
+				auto_change();
+	}
+	function bianhuixiao(no){
+		lunbodian_arr[no-1].style.fontSize="50px";
+		lunbodian_arr[no-1].style.position="relative";
+			lunbodian_arr[no-1].style.bottom="0px";
+				lunbodian_arr[no-1].style.left="0px";
+	}
+	function bianda(){
+			lunbodian_arr[no-1].style.fontSize="70px";
+			lunbodian_arr[no-1].style.position="relative";
+			lunbodian_arr[no-1].style.bottom="10px";
+				lunbodian_arr[no-1].style.left="10px";
+				clearTimeout(lunbotu.timer);
+				lunbotu.timer=setTimeout("trans("+no+")",time);
+	}
+</script>
+				
+
+	</body>
+</html>

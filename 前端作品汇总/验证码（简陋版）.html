@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		验证码:<input type="text" id="ma"><span id="yanzhengma" style="font-style: oblique;background-color: red;"></span></br>
+		<button onclick="check()">验证</button><button onclick="generate()">生成验证码</button>
+
+
+	</body>
+	<script>
+
+		var arr = new Array("1", "2", "3", "啊", "哦", "-", "蔡", "徐", "坤", "打", "篮", "球", "很", "厉", "害", "我", "们", "都", "叫","他","坤","哥");
+			
+				var ma = document.getElementById("ma");
+				var yanzhengma = document.getElementById("yanzhengma");
+				var num1;
+				var num2;
+				var num3;
+				var num4;
+				var str;
+
+				function generate() {
+					num1 = arr[Math.floor(Math.random() * arr.length)];
+					num2 = arr[Math.floor(Math.random() * arr.length)];
+					num3 = arr[Math.floor(Math.random() * arr.length)];
+					num4 = arr[Math.floor(Math.random() * arr.length)];
+					str = "" + num1 + "" + num2 + "" + num3 + "" + num4
+					yanzhengma.innerHTML = str;
+				}
+
+				function check() {
+					if (ma.value === str) alert("验证成功");
+					else alert("验证失败");
+				}
+	</script>
+</html>

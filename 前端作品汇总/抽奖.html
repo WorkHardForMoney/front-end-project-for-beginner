@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="background-image: url(./img/zuoye/dajiang.jpg);height:800px;background-repeat: no-repeat;text-align: center;
+		   background-size:cover;width: 100%;">
+			<button style="width: 100px;height: 70px;position: relative;top: 100px;" onclick="start()">开始</button> 
+			<button style="width: 100px;height: 70px;position: relative;top: 100px;" onclick="stop()">停止</button>
+		   <div  id="choujiangqu" style="background-color: aliceblue;width: 500px;height: 170px;position: relative;top: 200px;left:37%;font-size:100px;"></div>
+		</div>
+<script>
+	var choujiangqu=document.getElementById("choujiangqu");
+	var arr=new Array("IPHONE","一加","海信2A","没中奖","kinlde","魅族");
+	var jiangpin;
+
+	function start(){
+
+		jiangpin=arr[Math.floor(Math.random() * arr.length)];
+		choujiangqu.innerHTML=""+jiangpin;
+		choujiangqu.timer=setTimeout(start,100);
+	}
+	function stop(){
+		clearTimeout(choujiangqu.timer);
+		if(jiangpin==="没中奖"){
+			alert("抱歉，没中奖");
+		}else{
+			alert("恭喜你，中了"+jiangpin);
+		}
+	}
+	
+</script>
+	</body>
+</html>

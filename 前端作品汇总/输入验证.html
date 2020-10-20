@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery.js"></script>
+
+	</head>
+	<body>
+			<input type="text" id="mail" value="" onclick="username()"/>邮箱
+				<p id="p0"></p>
+		<input type="text" id="username" value="大萨达" onclick="username()"/>用户名
+		
+		<p id="p1"></p>
+		<input type="password" id="pas"/>密码
+
+<p id="p2"></p>
+
+<button onclick="myFunction()">提交</button>
+
+<script>
+	function username(){
+		document.getElementById("p1").innerHTML="支持中文,英文，数字,-,_的组合，4-20个字符";
+	}
+function myFunction() {
+    var text = document.getElementById("username").value;
+	    var pas = document.getElementById("pas").value;
+			    var mail = document.getElementById("mail").value;
+	var mat=/([^\u4e00-\u9fa5a-z1-9-_]){1}/.test(text);
+		var mat2=/([\u4e00-\u9fa5a-z1-9-_]){4,20}/.test(text);
+		var mat3=/[1-9]{1,}/.test(pas);
+				var mat4=/[a-z]{1,}/.test(pas);
+						var mat5=/[A-Z]{1,}/.test(pas);
+						var mat6=/[A-Za-z1-9]{8}/.test(pas);
+							
+						var mat7=/[1-9a-zA-Z]{1,11}[@][a-z]{1,5}[.com]/.test(mail);
+					if(mat7){
+								document.getElementById("p0").innerHTML="邮箱格式正确";
+					}else{
+							document.getElementById("p0").innerHTML="邮箱格式错误";
+					}
+						
+						
+	if(mat){
+		document.getElementById("p1").innerHTML="仅支持中文,英文，数字,-,_的组合，4-20个字符";
+	}else if(!mat2){
+			document.getElementById("p1").innerHTML="请输入4-20个字符";
+	}else{
+		document.getElementById("p1").innerHTML="格式正确";
+	}
+	if(mat3&&mat4&&mat5&&mat6){
+		document.getElementById("p2").innerHTML="密码输入成功";
+
+	}else{
+				document.getElementById("p2").innerHTML="密码过于简单,应该有小写字母，大写字母，数字的组合";
+	}
+
+}
+</script>
+	</body>
+</html>

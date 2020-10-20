@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery-3.5.1/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    x=$("form").serializeArray();
+    $.each(x, function(i, field){
+      $("#results").append(field.name + ":" + field.value + " ");
+    });
+  });
+});
+</script>
+</head>
+<body>
+<form action="">
+ <h3>数组的存储方式</h3>
+ A:顺序存储<input type="radio" name="1" value="1" /><br />
+  B：链式存储<input type="radio" name="1" value="2" /><br />
+   C:随机存储<input type="radio" name="1" value="3" /><br />
+    D:量子存储<input type="radio" name="1" value="4" /><br />
+ <h3>树的遍历方式有</h3>
+A:深度优先遍历 <input type="checkbox" name="20" value="1" />
+B:宽度优先遍历<input type="checkbox" name="20" value="2" />
+C：量子遍历<input type="checkbox" name="20" value="3" />
+D：随机遍历<input type="checkbox" name="20" value="4" />
+<h3>如何用java来实现链表</h3>
+<input type="text" name="20" />
+<br />
+</form>
+
+<button>序列化表单值</button>
+<div id="results"></div>
+</body>
+</html>

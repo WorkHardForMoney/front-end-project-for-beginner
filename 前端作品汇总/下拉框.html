@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="jquery-3.5.1/jquery-3.5.1.js"></script>
+		<script src="./jquery-3.5.1/jquery-3.5.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var sheng = ['广东', '广西'];
+			var shi = [
+				['广州', '佛山', '东莞', '深圳', '珠海', '韶关'],
+				['南宁', '桂林']
+			];
+			$(document).ready(function() {
+				for (let a = 0; a < shi[0].length; a++) {
+					$("#shi").append("<option>" + shi[0][a] + "</option>");
+				}
+				for (let i = 0; i < sheng.length; i++) {
+					$("#sheng").append("<option>" + sheng[i] + "</option>");
+					$("#sheng").change(function() {
+						$("#shi").empty();
+						let index=document.getElementById("sheng").selectedIndex;
+						for (let b = 0; b < shi[index].length; b++) {
+							$("#shi").append("<option>" + shi[index][b] + "</option>");
+						}
+
+					})
+				}
+
+			})
+		</script>
+		<select id="sheng">
+
+		</select>
+		<select id="shi">
+
+		</select>
+	</body>
+</html>

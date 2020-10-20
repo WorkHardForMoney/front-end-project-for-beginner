@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/w3.css">
+		
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="text-align: center;">
+			<div style="width:800px;height: 100px;margin-left: 40%;border:3px solid black;" id="bar">
+				<div id="loaded" style="height: 100%;width: 0%;" class="w3-teal"></div>
+			</div>
+			<div>
+				<button style="width:100px;text-align: center;" id="strat" onclick="start_loading()">开始</button>
+				<button style="width:100px;text-align: center;" id="stop" onclick="stop_loading()">停止</button>
+
+			</div>
+		</div>
+  
+   <audio controls="controls"  id="yidaimi"  style="volume: lightgray;">
+     <source src="./audios/YOUNG%20GOAT%20-%20六道佩恩.mp3" type="audio/ogg" />
+
+   </audio>
+		<img src="images/peien1.jpg" style="width: 300px;height: 500px;position:absolute;left: 0%;bottom: 0%;" id="peien" />
+		<script>
+			const start = document.querySelector('#start');
+			const stop = document.querySelector('#stop');
+			const bar = document.querySelector('#bar');
+			const loaded = document.querySelector('#loaded');
+			const peien = document.querySelector('#peien');
+			const yidaimmi= document.querySelector('#yidaimi');
+			var percent = 0;
+			var top_percent=100;
+			function start_loading() {
+					document.getElementById("yidaimi").duration=10;
+				document.getElementById("yidaimi").play();
+				percent++;
+				if(percent!==101){
+				loaded.style.width = percent + '%';
+				if(percent<=78){
+				peien.style.bottom=percent+'%';
+				peien.style.left=percent/2+'%';	
+				}
+				bar.timer = setTimeout(start_loading, 50);
+				}
+			}
+
+			function stop_loading() {
+				clearTimeout(bar.timer);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+			<script type="text/javascript" src="./js/jquery.js"></script>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div style="width: 70%;margin-left: 28%;">
+		<i class="
+glyphicon glyphicon-chevron-left
+" style="margin-right:3%;" id="l"></i><img src="images/pic1.jpg"  style="width: 50%" height="1500px" id="pi"/><i class="
+glyphicon glyphicon-chevron-right
+" id="r" style="margin-left:3%;"></i>
+</div>
+<p></p>
+<script type="text/javascript">
+	
+var pics= new Array( );//创建数组对象
+//存储图片
+pics[0]="<img src='images/pic1.jpg'  style=''width: 50%' id='pi' height='1500px'/>"
+pics[1]="<img src='images/pic2.jpg'  style=''width: 50%' id='pi' height='1500px'/>"
+pics[2]="<img src='images/pic3.jpg'  style=''width: 50%' id='pi' height='1500px'/>"
+var i=0;
+$(document).ready(function(){
+  $("#l").click(function(){
+	  if(i==0)i=2;
+	  else i--;
+	  $("#pi").remove();
+		$("#l").after(pics[i]);
+  });
+  $("#r").click(function(){
+  	  if(i==2)i=0;
+  	  else i++;
+  	  $("#pi").remove();
+  		$("#l").after(pics[i]);
+  });
+});
+</script>
+	</body>
+</html>
