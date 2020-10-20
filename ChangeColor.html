@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+height:100px;
+
+}
+</style>
+</head>
+<body  id="co">
+<script>
+var x;
+var t;
+var y;
+var click=1;
+document.body.style.backgroundColor="rgb(157,41,50)";
+function oneClick(){
+	if(click==1){
+	 x=Math.round(Math.random()*157);
+	 y=""+x;
+	document.getElementById("b").value="再次按下结束";
+	document.body.style.backgroundColor="rgb("+y+",41,50)";
+	changeColor();
+	click+=1;}
+	else twoClick();
+}
+function changeColor(){
+	x+=1;
+	 y=""+x;
+	document.body.style.backgroundColor="rgb("+y+",41,50)";
+    document.getElementById("i").innerHTML=y;
+	t=setTimeout("changeColor()",500);
+}
+function speedX(){
+	if(x>=0){
+		x+=10;
+	}
+}
+function twoClick(){ 
+	clearTimeout(t);
+	 y=""+x;
+	var z=""+x-157;
+	alert("当前rgb值为rgb("+y+",41,50)与胭脂色相差"+z);
+}
+</script>
+<div >
+<p >初始颜色为“胭脂色”，rgb值为（157,41,50）。按下按钮后会随机生成一种颜色，
+并且颜色随时间变化而产生轻微的变化，当你觉得颜色再次变为“胭脂色”时，按下按钮则颜色停止改变
+</p>
+<p id="i"></p>
+<input type="button" id="b" value="按下开始" onclick="oneClick()"/>
+<input type="button"  value="加速，按一次差十个色位" onclick="speedX()"/>
+</div>
+</body>
+</html>
